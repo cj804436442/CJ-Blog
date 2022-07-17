@@ -15,16 +15,17 @@
           <el-button size="small" type="primary" @click="addStudent()"
             >新增</el-button
           >
+          <el-button size="small" type="primary" @click="downLoad()">下载</el-button>
         </el-form-item>
       </el-form>
     </div>
-    <div class="student-table">
+    <div class="student-table" id="demo">
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="id" label="序号" width="180"> </el-table-column>
-        <el-table-column prop="name" label="姓名" width="180">
+        <el-table-column prop="id" label="序号" width="80" align="center"> </el-table-column>
+        <el-table-column prop="name" label="姓名" width="80" align="center">
         </el-table-column>
-        <el-table-column prop="age" label="年龄"> </el-table-column>
-        <el-table-column prop="option" label="操作">
+        <el-table-column prop="age" label="年龄" width="80" align="center"> </el-table-column>
+        <el-table-column prop="option" label="操作" width="180" align="center">
           <template slot-scope="scope">
             <el-button
               @click.native.prevent="editStudent(scope.row)"
@@ -48,30 +49,47 @@
 
 <script>
 import Add from "./add.vue";
+import { downloadPDF } from "../utils/downloadPDF"
 export default {
   components: {
     Add,
   },
   data() {
     return {
-      tableData: [],
+      tableData: [
+        {
+          age: "18",
+          id: "1",
+          name: "张三",
+        },
+        {
+          age: "20",
+          id: "2",
+          name: "李四",
+        },
+        {
+          age: "23",
+          id: "3",
+          name: "王五",
+        },
+      ],
       form: {
-        id: ""
-      }
+        id: "",
+      },
     };
   },
   mounted() {
-    this.queryAll();
+    // this.queryAll();
   },
   methods: {
     async queryById() {
       this.$loading(true);
-      let id = this.form.id
-      const {status, data} = await this.$service.queryById({
-        id: id
-      })
-      if(!status) return false
-      this.tableData = data
+      let id = this.form.id;
+      const { status, data } = await this.$service.queryById({
+        id: id,
+      });
+      if (!status) return false;
+      this.tableData = data;
       this.$loading(false);
     },
     async queryAll() {
@@ -111,6 +129,9 @@ export default {
         this.queryAll();
       });
     },
+    downLoad() {
+      downloadPDF(document.querySelector("#demo"),'我的PDF')
+    }
   },
 };
 </script>
@@ -132,5 +153,8 @@ export default {
   &-table {
     margin-top: 36px;
   }
+}
+.student-table {
+  width: 420px;
 }
 </style>>
