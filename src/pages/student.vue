@@ -15,7 +15,7 @@
           <el-button size="small" type="primary" @click="addStudent()"
             >新增</el-button
           >
-          <el-button size="small" type="primary" @click="downLoad()">下载</el-button>
+          <el-button size="small" type="primcary" @click="downLoad()">下载</el-button>
         </el-form-item>
       </el-form>
     </div>
