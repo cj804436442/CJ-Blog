@@ -17,8 +17,8 @@
         </div>
         <div class="menu-item">
           <el-menu-item index="1">处理中心</el-menu-item>
-          <el-menu-item index="2">我的工作台 </el-menu-item>
-          <el-menu-item index="3">消息中心</el-menu-item>
+          <el-menu-item index="2">我的简历 </el-menu-item>
+          <el-menu-item index="3">联系我吧</el-menu-item>
           <el-menu-item index="4">订单管理</el-menu-item>
         </div>
       </el-menu>
