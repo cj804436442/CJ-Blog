@@ -1,18 +1,18 @@
 <template>
   <div class="main">
     <Navicator />
+    <MyResume />
   </div>
 </template>
 
 <script>
-import Navicator from "./navicator.vue"
+import Navicator from "./navicator.vue";
+import MyResume from "./myResume.vue";
 export default {
   name: "navicator",
-  components: {Navicator},
+  components: { Navicator, MyResume },
   data() {
-    return {
-
-    }
+    return {};
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -20,7 +20,7 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
-    },
+    }
   },
 };
 </script>

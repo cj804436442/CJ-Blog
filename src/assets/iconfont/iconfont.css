@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3546268 */
+  src: url('iconfont.woff2?t=1658759418076') format('woff2'),
+       url('iconfont.woff?t=1658759418076') format('woff'),
+       url('iconfont.ttf?t=1658759418076') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-telephone:before {
+  content: "\e96c";
+}
+
+.icon-weixin:before {
+  content: "\e660";
+}
+
+.icon-youxiang:before {
+  content: "\e62e";
+}
+

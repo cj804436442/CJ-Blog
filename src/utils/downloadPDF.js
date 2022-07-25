@@ -2,7 +2,6 @@
 import html2Canvas from "html2canvas";
 import JsPDF from "jspdf";
 export function downloadPDF(ele, pdfName) {
-  debugger;
   let eleW = ele.offsetWidth;
   let eleH = ele.offsetHeight;
   let eleOffsetTop = ele.offsetTop;
@@ -13,7 +12,7 @@ export function downloadPDF(ele, pdfName) {
     document.documentElement.clientWidth || document.body.clientWidth;
   let win_out = window.innerWidth;
   if (win_out > win_in) {
-    asb = (win_out - win_in) / 2;
+    abs = (win_out - win_in) / 2;
   }
   canvas.width = eleW * 2;
   canvas.height = eleH * 2;

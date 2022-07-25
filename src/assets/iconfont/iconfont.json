@@ -1,0 +1,30 @@
+{
+  "id": "3546268",
+  "name": "myResume",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7568886",
+      "name": "24gf-telephone",
+      "font_class": "telephone",
+      "unicode": "e96c",
+      "unicode_decimal": 59756
+    },
+    {
+      "icon_id": "840781",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "7084886",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    }
+  ]
+}
