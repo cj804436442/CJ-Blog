@@ -15,7 +15,6 @@
           <el-button size="small" type="primary" @click="addStudent()"
             >新增</el-button
           >
-          <el-button size="small" type="primcary" @click="downLoad()">下载</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -49,7 +48,6 @@
 
 <script>
 import Add from "./add.vue";
-import { downloadPDF } from "../utils/downloadPDF"
 export default {
   components: {
     Add,
@@ -129,9 +127,6 @@ export default {
         this.queryAll();
       });
     },
-    downLoad() {
-      downloadPDF(document.querySelector("#demo"),'我的PDF')
-    }
   },
 };
 </script>

@@ -1,9 +1,9 @@
 <template>
-  <div class="myResume" id="myResume">
+  <div class="myResume" id="pdfDom">
     <div class="resume-top">
       <div class="resume-top_left"></div>
       <div class="resume-top_right">
-        <div class="resume-top_right-name">崔捷</div>
+        <div class="resume-top_right-name" @click="getPdf('#pdfDom')">崔捷</div>
         <div class="resume-top_right-info">
           <span> 在职·月内到岗·25岁·本科·两年经验 </span>
         </div>
@@ -18,16 +18,18 @@
 </template>
 
 <script>
-import { downloadPDF } from "../utils/downloadPDF";
+import htmlToPdf from "../utils/htmlToPdf"
 export default {
   name: "myResume",
   components: {},
   data() {
-    return {};
+    return {
+      htmlTitle: "我的PDF"
+    };
   },
   methods: {
-    downLoad() {
-      downloadPDF(document.querySelector("#myResume"), "我的PDF");
+    getPdf() {
+      htmlToPdf.getPdf(this.htmlTitle);
     },
   },
   created() {},
@@ -43,7 +45,7 @@ export default {
   margin-top: 30px;
   padding: 60px 100px;
   background-color: #fff;
-  box-shadow: 2px 4px 8px rgb(0 0 0 / 10%);
+  // box-shadow: 2px 4px 8px rgb(0 0 0 / 10%);
   .resume-top {
     width: 100%;
     height: 250px;
@@ -55,7 +57,7 @@ export default {
       height: 100px;
       background: url("../assets/myPhoto.png") no-repeat center;
       background-size: contain;
-      border-radius: 0 0 50% 50%;
+      border-radius: 50%;
     }
     &_right {
       width: 420px;
