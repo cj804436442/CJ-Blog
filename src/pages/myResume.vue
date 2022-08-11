@@ -10,7 +10,13 @@
         <div class="resume-top_right-concat">
           <span class="resume-top_right-concat_tel">18452481821</span>
           <span class="resume-top_right-concat_email">804436442@qq.com</span>
-          <span class="resume-top_right-concat_wechat">18452481821</span>
+
+          <el-popover placement="top-start" width="100" trigger="hover">
+            <img class="wechat_img" src="../assets/weChat.png" alt="" />
+            <span slot="reference" class="resume-top_right-concat_wechat"
+              >18452481821</span
+            >
+          </el-popover>
         </div>
       </div>
     </div>
@@ -18,13 +24,13 @@
 </template>
 
 <script>
-import htmlToPdf from "../utils/htmlToPdf"
+import htmlToPdf from "../utils/htmlToPdf";
 export default {
   name: "myResume",
   components: {},
   data() {
     return {
-      htmlTitle: "我的PDF"
+      htmlTitle: "我的PDF",
     };
   },
   methods: {
@@ -113,5 +119,9 @@ export default {
       }
     }
   }
+}
+.wechat_img {
+  width: 150px;
+  height: 150px;
 }
 </style>
